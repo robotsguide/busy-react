@@ -3,3 +3,68 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.App {
+  width: 100%;
+}
+
+.App-logo {
+  height: 80px;
+}
+
+.App-header {
+  background-color: #2d3e50;
+  height: 150px;
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.member-table {
+  display: table;
+  width: 100%;
+}
+
+.member-table-header {
+  display: table-header-group;
+}
+
+.header-cell {
+  display: table-cell;
+  font-weight: bold;
+  padding: 10px;
+  border-bottom: 1px solid #000;
+}
+
+.member-table-body {
+  display: table-row-group;
+}
+
+.member-row {
+  display: table-row;
+}
+
+.member-cell {
+  display: table-cell;
+  padding: 10px;
+  border-bottom: 1px solid #000;
+}
+
+.member-cell last-of-type {
+  text-align: right;
+}
+
+button {
+  background-color: #30AEEF;
+  color: #fff;
+  border-radius: 5px;
+  height: 30px;
+  font-size: 14px;
+  border: none;
+}
+
+
