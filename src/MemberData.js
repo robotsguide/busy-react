@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import gql from "graphql-tag";
 import { Query } from "react-apollo";
+import TimeEntries from './TimeEntries';
 
 class MemberData extends Component {
-  render() {
+  render() {  
     return <Query
       query={gql`
         {
@@ -25,29 +26,24 @@ class MemberData extends Component {
             if (loading) return <p>Loading...</p>;
             if (error) return <p>Error :(</p>;
               
-            const memberRows = [];
             
-            data.members.map(member => {
-              let memberRow = null;
+            
+            return data.members.map(member => {
               if (member.email === null) {
-                 memberRow = <div className="member-row" key={member.id}>
+                 return <div className="member-row" key={member.id}>
                   <span className="member-cell name">{`${member.first_name} ${member.last_name}`}</span>
                   <span className="member-cell email">none submitted</span>
-                  <span className="member-cell time-entries"><button>View Time Entries</button></span>
+                  <TimeEntries memberId={member.id}/>
                 </div>;
-                memberRows.push(memberRow);
                 
               } else {
-              memberRow = <div className="member-row" key={member.id}>
+              return <div className="member-row" key={member.id}>
                   <span className="member-cell name">{`${member.first_name} ${member.last_name}`}</span>
                   <span className="member-cell email">{`${member.email}`}</span>
-                  <span className="member-cell time-entries"><button>View Time Entries</button></span>
+                  <TimeEntries memberId={member.id}/>
                 </div>;
-                memberRows.push(memberRow);
               }
-              return null;
             });
-            return memberRows;
           }}
         </Query>
   }

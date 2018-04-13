@@ -58,6 +58,12 @@ body {
   text-align: right;
 }
 
+.entry-item {
+  display: block;
+  left: 0;
+  position: absolute;
+}
+
 button {
   background-color: #30AEEF;
   color: #fff;
